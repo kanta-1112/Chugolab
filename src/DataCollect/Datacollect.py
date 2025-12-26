@@ -4,13 +4,13 @@ from pathlib import Path
 
 def collect_center_of_mass_horizontal_no_repeat_time():
     # ================= 設定エリア =================
-    base_folder_path = r"C:\KAN\Program\BKresult\5(1222)" 
+    base_folder_path = r"C:\KAN\KAN's_research\data\input\Simulation_result(2025)\2(1218)" 
     
     # 対象ファイル名
     target_file_name = "STSmodel_BodyKinematics_pos_global.sto"
     
     # 保存するファイル名
-    output_filename = "5(1222).xlsx"
+    output_filename = "2(1226).xlsx"
     # ==============================================
 
     root_path = Path(base_folder_path)

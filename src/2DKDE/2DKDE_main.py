@@ -3,14 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import gaussian_kde
 import os
-import matplotlib.image as mping
 
 # ---------------------------------------------------------
-#実装内容：変数系をコードの上部で一括管理
+#実装内容：データの正規化．prog_dataに補正係数の2行を追加
 
 # 異なる足首角度の初期条件a(0°,10°,20°)ごとに画像データを生成
 # ループ処理にして、一括で33人分の画像データを生成
-# 矢状平面図の透過表示
 # バンド幅の調整
 # 初期重心の位置をプロット
 # 第1相から第2相と第2相から第3相でそれぞれ2DKDEを行う
@@ -27,13 +25,11 @@ MASS_DATA_FIRST = [3,3,1]
 MASS_DATA_ANGLE = [0,10,20]
 
 # データファイルのディレクトリとベースファイル名を指定
-BASE_DIR = r"C:\KAN\Program\2DKDE\2DKDE_data\Normalize"
-OUT_DIR = r"C:\KAN\Program\2DKDE\2DKDE_png\20251226"
-BASE_FILENAME = "prog_data(2025asai)"
+# 例: prog_data1.csv, prog_data2.csv, ...
+BASE_DIR = r"C:\KAN\KAN's_research\data\input\prog_data\Normalize\2025"
+OUT_DIR = r"C:\KAN\KAN's_research\data\output\PNG\20251226"
+BASE_FILENAME = "prog_data"
 FILENAME_SUFFIX = ".csv"
-
-img_path = r"C:\KAN\Program\2DKDE\model.png"
-img = mping.imread(img_path)
 # --------------------
 
 # ループ処理: START_INDEX から END_INDEX までのすべてのデータファイルを処理
@@ -100,8 +96,6 @@ for i in range(START_INDEX, END_INDEX + 1):
             # 4. 結果のプロット
             plt.figure(figsize=(10, 8))
 
-            plt.imshow(img, extent=[xmin+0.09, 0.09+xmax/2, -0.01+ymin/2, -0.01+ymax], alpha=1)
-
             # 散布図で元のデータをプロット（背景として）
             plt.scatter(x1, y1, s=10, alpha=0.5, label='1⇒2')
             plt.scatter(x2, y2, s=10, alpha=0.5, label='2⇒3')
@@ -129,7 +123,7 @@ for i in range(START_INDEX, END_INDEX + 1):
             
             # 出力ディレクトリ（データファイルと同じ場所）に保存
             output_path = os.path.join(OUT_DIR, output_filename)
-            plt.savefig(output_path,transparent = False)
+            plt.savefig(output_path)
             
             plt.close() # メモリ節約のため、プロットウィンドウを閉じる
             

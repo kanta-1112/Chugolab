@@ -17,7 +17,7 @@ import os
 
 # --- 設定パラメータ ---
 START_INDEX = 1  # 処理を開始するデータ番号
-END_INDEX = 5   # 処理を終了するデータ番号
+END_INDEX = 1   # 処理を終了するデータ番号
 
 #各データの重心の初期位置ごとにいくつのデータがあるか
 MASS_DATA_NUM = [72,72,24]
@@ -26,9 +26,9 @@ MASS_DATA_ANGLE = [0,10,20]
 
 # データファイルのディレクトリとベースファイル名を指定
 # 例: prog_data1.csv, prog_data2.csv, ...
-BASE_DIR = r"C:\KAN\KAN's_research\data\input\prog_data\Normalize\2025"
-OUT_DIR = r"C:\KAN\KAN's_research\data\output\PNG\20251226"
-BASE_FILENAME = "prog_data"
+BASE_DIR = r"C:\KAN\KAN's_research\data\input\prog_data\Normalize\test"
+OUT_DIR = r"C:\KAN\KAN's_research\data\output\PNG\20260123"
+BASE_FILENAME = "prog_datare"
 FILENAME_SUFFIX = ".csv"
 # --------------------
 

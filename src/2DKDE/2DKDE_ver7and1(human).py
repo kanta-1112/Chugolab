@@ -23,16 +23,17 @@ END_INDEX = 33   # 処理を終了するデータ番号
 
 #各データの重心の初期位置ごとにいくつのデータがあるか
 MASS_DATA_NUM = [72,72,24]
+
 MASS_DATA_FIRST = [3,3,1]
 MASS_DATA_ANGLE = [0,10,20]
 
 # データファイルのディレクトリとベースファイル名を指定
-BASE_DIR = r"C:\KAN\Program\ASAI\2DKDE\2DKDE_data\Normalize"
-OUT_DIR = r"C:\KAN\Program\ASAI\2DKDE\2DKDE_png\20251204"
+BASE_DIR = r"C:\KAN\KAN's_research\data\input\prog_data\Normalize\2024"
+OUT_DIR = r"C:\KAN\KAN's_research\data\output\PNG\20260203"
 BASE_FILENAME = "prog_data"
 FILENAME_SUFFIX = ".csv"
 
-img_path = r"C:\KAN\Program\ASAI\2DKDE\model.png"
+img_path = r"C:\KAN\KAN's_research\data\input\prog_data\Normalize\2024\model.png"
 img = mping.imread(img_path)
 # --------------------
 
